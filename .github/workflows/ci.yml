@@ -120,7 +120,7 @@ jobs:
          bash test_b.sh
       - name: archive build artifacts for linux
         if: contains(github.event.head_commit.message, 'pls.pack')
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: artifcats-for-linux-${{github.sha}}
           path: |
@@ -161,7 +161,7 @@ jobs:
           bash test_b.sh
       - name: archive build artifacts for linux
         if: contains(github.event.head_commit.message, 'pls.pack')
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: artifcats-for-linux-${{github.sha}}
           path: |
@@ -200,7 +200,7 @@ jobs:
          bash test_b.sh
       - name: archive build artifacts for windows
         if: contains(github.event.head_commit.message, 'pls.pack')
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: artifcats-for-windows-${{github.sha}}
           path: |
@@ -258,7 +258,7 @@ jobs:
          bash test_b.sh
       - name: archive build artifacts for macos
         if: contains(github.event.head_commit.message, 'pls.pack')
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: artifcats-for-macos-${{github.sha}}
           path: |
@@ -304,7 +304,7 @@ jobs:
          bash test_b.sh
       - name: archive build artifacts for macos
         if: contains(github.event.head_commit.message, 'pls.pack')
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: artifcats-for-macos-${{github.sha}}
           path: |
