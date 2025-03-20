@@ -1,0 +1,50 @@
+
+W8A
+cvx_solve_w8a.py                       CLARABEL               ECOS                    ECOS-BB                 MOSEK            SCS
+
+Peak Working Set                       816 248 K              668 152 K                668 328 K               1 216 172 K     813 080 K
+Pek Private Bytes for Virtual Memory   5 818 936 K            5 681 656 K              5 681 936 K             6 685 032 K     5 859 308
+Number of loaded dynamic libraries     335                    335                      335                     337             335
+Peak Kernel Handles                    809                    809                      811                     1087            809
+
+
+W8A/FedNL Simulation/Windows           TopK                   RandK                    TopLeK                 RandSeqK         Ident        Natural
+
+Peak Working Set                       725 512 K              750 740 K                725 380 K              726 140 K        785 960 K   745 532 K
+Pek Private Bytes for Virtual Memory   745 072 K              770 740 K                745 868 K              746 072 K        805 996 K   806 256 K
+Number of loaded dynamic libraries     10                     10                       10                     10               10          10
+Peak Kernel Handles                    74                     74                       74                     74               74          74
+============================================================================================================================================================
+
+A9A
+cvx_solve_a89a.py                     *CLARABEL                   ECOS                    ECOS-BB                 MOSEK        SCS
+
+Peak Working Set                       522 592 K                 408 440 K                409 080 K             706 616 K         504 560
+Pek Private Bytes for Virtual Memory   5 472 376 K               5 387 576 K              5 388 092 K           5 945 336 K       5 546 052 K
+Number of loaded dynamic libraries     335                       335                      335                   337               335
+Peak Kernel Handles                    811                       811                      811                   1087              811
+
+
+A9A/FedNL Simulation/Windows           TopK                   RandK                    TopLeK                 RandSeqK         Ident        Natural
+
+Peak Working Set                       187 740 K              187 888 K                188 416 K              187 552 K        195 892 K   189 988 K
+Pek Private Bytes for Virtual Memory   192 208 K              192 296 K                192 908 K              191 516 K        199 744 K   199 792 K
+Number of loaded dynamic libraries     10                     10                       10                     10               10          10
+Peak Kernel Handles                    74                     74                       74                     74               74          74
+
+============================================================================================================================================================
+PHISHING
+cvx_solve_phishing.py                  *CLARABEL                   ECOS                    ECOS-BB                 MOSEK           SCS
+
+Peak Working Set                       323 364 K                 256 144 K                255 916 K             415 476  K        281 220 K
+Pek Private Bytes for Virtual Memory   5 248 824 K               5 192 228 K              5 192 048 K           5 718 484 K       5 196 608 K
+Number of loaded dynamic libraries     335                       335                      335                   337               335
+Peak Kernel Handles                    811                       811                      811                   1087              811
+
+PHISHING/FedNL Simulation/Windows      TopK                   RandK                    TopLeK                 RandSeqK         Ident        Natural
+
+Peak Working Set                       44 560 K              47 204 K                44 260 K               44 168 K        45 732  K       45 532  K
+Pek Private Bytes for Virtual Memory   45 484 K              47 284 K                45 160 K                45 236 K       46 856 K       45 568  K
+Number of loaded dynamic libraries     10                     10                       10                     10               10          10
+Peak Kernel Handles                    74                     74                       74                     74               74          74
+

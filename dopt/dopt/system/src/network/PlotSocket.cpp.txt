@@ -1,0 +1,177 @@
+#include "dopt/system/include/debug_plots/impl/Socket.h"
+#include "dopt/system/include/debug_plots/PlotSocket.h"
+
+#include <string>
+#include <sstream>
+#include <iostream>
+
+#include <stdarg.h>
+#include <string.h>
+
+static constexpr bool kDebugOutput = 0; ///< Knob to turn on/off debug output to debug "PlotSocket"
+
+namespace dopt
+{
+    PlotSocket::PlotSocket(const char* address, unsigned short port)
+    : connectionEstablished(false)
+    {
+        if (address == nullptr)
+            return;
+
+        if (Socket::isNetworkSubSystemInitialized() == false)
+        {
+            bool isInit = Socket::initNetworkSubSystem();
+            if (!isInit)
+            {
+                std::cerr << "Can not initialize socket subsystem\n";
+                return;
+            }
+        }
+
+        socket.reset(new Socket(Socket::Protocol::TCPv4));
+        connectionEstablished = socket->connect(address, port);
+    }
+
+    bool PlotSocket::isConnected() const {
+        return connectionEstablished;
+    }
+
+    bool PlotSocket::logMsg(const char* message, ...)
+    {
+        if (!isConnected())
+            return false;
+
+        size_t buf_size = 512;
+        char* buf = new char[buf_size];
+
+        va_list args;
+        va_start(args, message);
+        for (;;)
+        {
+#ifdef DOPT_WINDOWS
+            int buf_elements = vsprintf_s(buf, buf_size, message, args);
+#else
+            int buf_elements = vsprintf(buf, message, args);
+#endif
+            if (size_t(buf_elements) < buf_size)
+                break;
+            buf_size *= 2;
+            delete[] buf;
+            buf = new char[buf_size];
+        }
+        va_end(args);
+
+        bool r1 = socket->sendData("log,", strlen("log,"));
+        bool r2 = socket->sendData(buf, strlen(buf));
+        bool r3 = socket->sendData("\n", 1);
+
+        delete[]buf;
+        return r1 && r2 && r3;
+    }
+
+    bool PlotSocket::plotGraph(const std::string& plotName, double x, double y)
+    {
+        if (!isConnected())
+            return false;
+
+        std::stringstream s;
+        s << "plot," << plotName << "," << x << "," << y << "\n";
+        std::string ss = s.str();
+    
+        if (kDebugOutput)
+            std::cout << ss;
+
+        return socket->sendData(ss.c_str(), ss.size());
+    }
+
+    bool PlotSocket::cleanPlots()
+    {
+        if (!isConnected())
+            return false;
+        std::stringstream s;
+        s << "clean,plots\n";
+        std::string ss = s.str();
+
+        if (kDebugOutput)
+            std::cout << ss;
+
+        return socket->sendData(ss.c_str(), ss.size());
+    }
+
+    bool PlotSocket::cleanLog()
+    {
+        if (!isConnected())
+            return false;
+        std::stringstream s;
+        s << "clean,log\n";
+        std::string ss = s.str();
+        
+        if (kDebugOutput)
+            std::cout << ss;
+
+        return socket->sendData(ss.c_str(), ss.size());
+    }
+
+    bool PlotSocket::plotCfg_width(const char* plotName, int width)    {
+        if (!isConnected())
+            return false;
+
+        std::stringstream s;
+        s << "plotCfg," << plotName << "," << "width" << "," << width << "\n";
+        std::string ss = s.str();
+
+        if (kDebugOutput)
+            std::cout << ss;
+
+        return socket->sendData(ss.c_str(), ss.size());
+    }
+
+    bool PlotSocket::plotCfg_showAsDotline(const char* plotName, bool showAsDotLine)
+    {
+        if (!isConnected())
+            return false;
+
+        std::stringstream s;
+        s << "plotCfg," << plotName << "," << "dotLine" << "," << showAsDotLine << "\n";
+        std::string ss = s.str();
+
+        if (kDebugOutput)
+            std::cout << ss;
+
+        return socket->sendData(ss.c_str(), ss.size());
+    }
+
+    bool PlotSocket::plotCfg_visible(const char* plotName, bool visible)
+    {
+        if (!isConnected())
+            return false;
+
+        std::stringstream s;
+        s << "plotCfg," << plotName << "," << "visible" << "," << visible << "\n";
+        std::string ss = s.str();
+
+        if (kDebugOutput)
+            std::cout << ss;
+
+        return socket->sendData(ss.c_str(), ss.size());
+    }
+
+    bool PlotSocket::plotCfg_color(const char* plotName, unsigned char red, unsigned char green, unsigned char blue)
+    {
+        if (!isConnected())
+            return false;
+
+        std::stringstream s;
+        s << "plotCfg," << plotName << "," << "color_rgb" << "," << int(red) << "," << int(green) << "," << int(blue) << "\n";
+        std::string ss = s.str();
+        
+        if (kDebugOutput)
+            std::cout << ss;
+
+        return socket->sendData(ss.c_str(), ss.size());
+    }
+
+    Socket* PlotSocket::getSocket() {
+        return socket.get();
+    }
+}

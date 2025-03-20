@@ -1,0 +1,38 @@
+#pragma once
+
+#include "dopt/system/include/debug_plots/impl/Socket.h"
+
+#include <memory>
+#include <string>
+
+namespace dopt
+{
+    class PlotSocket
+    {
+    public:
+        PlotSocket(const char* address = nullptr, unsigned short port = 0);
+
+        bool isConnected() const;
+
+        bool logMsg(const char* message, ...);
+
+        bool plotGraph(const std::string& plotName, double x, double y);
+
+        bool plotCfg_width(const char* plotName, int width);
+
+        bool plotCfg_showAsDotline(const char* plotName, bool showAsDotLine);
+
+        bool plotCfg_visible(const char* plotName, bool visible);
+
+        bool plotCfg_color(const char* plotName, unsigned char red, unsigned char green, unsigned char blue);
+
+        bool cleanPlots();
+
+        bool cleanLog();
+
+        Socket* getSocket();
+    private:
+        std::unique_ptr<dopt::Socket> socket;
+        bool connectionEstablished;
+    };
+}
