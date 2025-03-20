@@ -96,7 +96,7 @@ jobs:
     if: contains(github.event.head_commit.message, 'pls.build')
     steps:
       - name: Check out repository code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner into " ${{ github.workspace }}
       - run: sudo apt-get install -y swig
       - run: |
@@ -137,7 +137,7 @@ jobs:
     if: contains(github.event.head_commit.message, 'pls.build')
     steps:
       - name: Check out repository code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner into " ${{ github.workspace }}
       - run: sudo apt-get install -y swig
       - run: |
@@ -178,7 +178,7 @@ jobs:
     if: contains(github.event.head_commit.message, 'pls.build')
     steps:
       - name: Check out repository code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner into " ${{ github.workspace }}
       - run: |
          $env:EXTRA_CMAKE_ARGS="-DSUPPORT_CPU_SSE2_128_bits=OFF -DSUPPORT_CPU_AVX_256_bits=ON -DSUPPORT_CPU_AVX_512_bits=OFF -DDOPT_CUDA_SUPPORT=OFF -DDOPT_OPENCL_SUPPORT=OFF"
@@ -229,7 +229,7 @@ jobs:
     if: contains(github.event.head_commit.message, 'pls.build') && false
     steps:
       - name: Check out repository code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner into " ${{ github.workspace }}
       - name: Install Homebrew
         run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" 
@@ -275,7 +275,7 @@ jobs:
     if: contains(github.event.head_commit.message, 'pls.build')
     steps:
       - name: Check out repository code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner into " ${{ github.workspace }}
       - name: Install Homebrew
         run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" 
@@ -443,7 +443,7 @@ jobs:
     if: contains(github.event.head_commit.message, 'pls.check-src')
     steps:
       - name: Check out repository code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner into " ${{ github.workspace }}
 
       - run: |
