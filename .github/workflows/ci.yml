@@ -238,8 +238,8 @@ jobs:
           brew update
           brew install swig
       - run: |
-         export CC=gcc-13
-         export CXX=g++-13
+         #export CC=gcc-13
+         #export CXX=g++-13
          export EXTRA_CMAKE_ARGS="-DSUPPORT_CPU_SSE2_128_bits=OFF -DSUPPORT_CPU_AVX_256_bits=OFF -DSUPPORT_CPU_AVX_512_bits=OFF -DSUPPORT_CPU_CPP_TS_V2_SIMD=OFF -DDOPT_CUDA_SUPPORT=OFF -DDOPT_OPENCL_SUPPORT=ON"
 
          cd ${{ github.workspace }}/dopt/scripts 
@@ -284,8 +284,8 @@ jobs:
           brew update
           brew install swig
       - run: |
-         export CC=gcc-13
-         export CXX=g++-13
+         #export CC=gcc-13
+         #export CXX=g++-13
          export EXTRA_CMAKE_ARGS="-DSUPPORT_CPU_SSE2_128_bits=OFF -DSUPPORT_CPU_AVX_256_bits=ON -DSUPPORT_CPU_AVX_512_bits=OFF -DDOPT_CUDA_SUPPORT=OFF -DDOPT_OPENCL_SUPPORT=ON"
 
          cd ${{ github.workspace }}/dopt/scripts 
