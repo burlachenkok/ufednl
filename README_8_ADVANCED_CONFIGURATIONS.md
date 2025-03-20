@@ -141,4 +141,3 @@ Finally, you can say multiple rules separated by `:`.
 |  `./foo_test --gtest_repeat=10 --gtest_filter=-*DeathTest.*` |  Runs all except tests from test case DeathTest. And run them 10 times. |
 
 In source code in C++ level you can pass different flags. Filter setup via the command-line (if they are presented) has priority over filter setup in the source code. Finally, to exclude a test from execution, append `DISABLED_` prefix to its name.
-
