@@ -100,8 +100,8 @@ jobs:
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner into " ${{ github.workspace }}
       - run: sudo apt-get install -y swig
       - run: |
-         export CC=gcc-11
-         export CXX=g++-11
+         export CC=gcc-13
+         export CXX=g++-13
          export EXTRA_CMAKE_ARGS="-DSUPPORT_CPU_SSE2_128_bits=OFF -DSUPPORT_CPU_AVX_256_bits=ON -DSUPPORT_CPU_AVX_512_bits=OFF -DDOPT_CUDA_SUPPORT=OFF -DDOPT_OPENCL_SUPPORT=OFF"
 
          cd ${{ github.workspace }}/dopt/scripts 
@@ -141,8 +141,8 @@ jobs:
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner into " ${{ github.workspace }}
       - run: sudo apt-get install -y swig
       - run: |
-          export CC=gcc-11
-          export CXX=g++-11
+          export CC=gcc-13
+          export CXX=g++-13
           export EXTRA_CMAKE_ARGS="-DSUPPORT_CPU_CPP_TS_V2_SIMD=ON -DSUPPORT_CPU_SSE2_128_bits=OFF -DSUPPORT_CPU_AVX_256_bits=OFF -DSUPPORT_CPU_AVX_512_bits=OFF -DDOPT_CUDA_SUPPORT=OFF -DDOPT_OPENCL_SUPPORT=OFF"
           
           cd ${{ github.workspace }}/dopt/scripts 
@@ -284,8 +284,8 @@ jobs:
           brew update
           brew install swig
       - run: |
-         #export CC=gcc-13
-         #export CXX=g++-13
+         export CC=gcc-13
+         export CXX=g++-13
          export EXTRA_CMAKE_ARGS="-DSUPPORT_CPU_SSE2_128_bits=OFF -DSUPPORT_CPU_AVX_256_bits=ON -DSUPPORT_CPU_AVX_512_bits=OFF -DDOPT_CUDA_SUPPORT=OFF -DDOPT_OPENCL_SUPPORT=ON"
 
          cd ${{ github.workspace }}/dopt/scripts 
@@ -460,8 +460,8 @@ jobs:
          cloc --by-file --exclude-dir=3rdparty,build_debug,build_release,draft .
 
       - run: |
-         export CC=gcc-11
-         export CXX=g++-11
+         export CC=gcc-13
+         export CXX=g++-13
          export EXTRA_CMAKE_ARGS="-DSUPPORT_CPU_SSE2_128_bits=OFF -DSUPPORT_CPU_AVX_256_bits=ON -DSUPPORT_CPU_AVX_512_bits=OFF -DDOPT_CUDA_SUPPORT=OFF -DDOPT_OPENCL_SUPPORT=OFF -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
          cd ${{ github.workspace }}/dopt/scripts 
          python project_scripts.py -c -gr -j 2
