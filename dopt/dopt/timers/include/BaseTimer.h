@@ -6,6 +6,7 @@
 
 #include <string>
 #include <sstream>
+#include <stdint.h>
 
 namespace dopt
 {

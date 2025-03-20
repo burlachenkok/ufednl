@@ -14,6 +14,7 @@
 
 #include <string_view>
 #include <string>
+#include <stdint.h>
 
 namespace dopt
 {
