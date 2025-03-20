@@ -10,7 +10,6 @@
 | [5. Experiments](./README_5_EXPERIMENTS.md)                              | How to launch experiments from the paper.                                                                                                                                           | 
 | [6. Builtin GitHub Actions and CI](./README_6_BUILTIN_GITHUB_ACTIONS.md) | Using this project to leverage GitHub Continuous Integration (CI).                                                                                                                  | 
 | [7. Project Structure](./README_7_PROJECT_STRUCTURE.md)                  | High-level guidelines over for parts of the project.                                                                                                                                | 
-| [8. Advanced Configurations](./README_8_ADVANCED_CONFIGURATIONS.md)            | Document how you can configure the build beyond default settings.                                                                                                                   | 
+| [8. Advanced Configurations](./README_8_ADVANCED_CONFIGURATIONS.md)      | Document how you can configure the build beyond default settings.                                                                                                                   | 
 
-This project is licensed under the GNU General Public License v3.0.
-See the LICENSE file for details.
+For licensing details, please refer to the LICENSE file in the root directory of the project repository.
