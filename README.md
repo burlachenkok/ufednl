@@ -9,14 +9,14 @@
 | [4. Build in Docker](./README_4_BUILD_IN_DOCKER.md)                      | Build a project in the docker container. Useful to build and try code in another (foreign) CPU architecture.                                                                        | 
 | [5. Experiments](./README_5_EXPERIMENTS.md)                              | How to launch experiments from the paper.                                                                                                                                           | 
 | [6. Builtin GitHub Actions and CI](./README_6_BUILTIN_GITHUB_ACTIONS.md) | Using this project to leverage GitHub Continuous Integration (CI).                                                                                                                  | 
-| [7. Project Structure](./README_7_PROJECT_STRUCTURE.md)                  | High-level guidelines over for parts of the project.                                                                                                                                | 
+| [7. Project Structure](./README_7_PROJECT_STRUCTURE.md)                  | High-level guidelines for parts of the project.                                                                                                                                | 
 | [8. Advanced Configurations](./README_8_ADVANCED_CONFIGURATIONS.md)      | Document how you can configure the build beyond default settings.                                                                                                                   | 
 
 For licensing details, please refer to the LICENSE file in the root directory of the project repository.
 
 # Paper
 
-Title: "Unlocking FedNL: Self-Contained Compute-Optimized Implementation"
+Title: *"Unlocking FedNL: Self-Contained Compute-Optimized Implementation"*
 
 arXiv link: https://arxiv.org/abs/2410.08760
 
