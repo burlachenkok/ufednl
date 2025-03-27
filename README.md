@@ -13,3 +13,14 @@
 | [8. Advanced Configurations](./README_8_ADVANCED_CONFIGURATIONS.md)      | Document how you can configure the build beyond default settings.                                                                                                                   | 
 
 For licensing details, please refer to the LICENSE file in the root directory of the project repository.
+
+# How to Cite
+
+```
+@article{burlachenko2024unlocking,
+  title={Unlocking FedNL: Self-Contained Compute-Optimized Implementation},
+  author={Burlachenko, Konstantin and Richtarik, Peter},
+  journal={arXiv preprint arXiv:2410.08760},
+  year={2024}
+}
+```
