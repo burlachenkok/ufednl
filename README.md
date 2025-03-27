@@ -14,6 +14,13 @@
 
 For licensing details, please refer to the LICENSE file in the root directory of the project repository.
 
+# Paper
+
+Title: "Unlocking FedNL: Self-Contained Compute-Optimized Implementation"
+
+arXiv link: https://arxiv.org/abs/2410.08760
+
+
 # How to Cite
 
 ```
